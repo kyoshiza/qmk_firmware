@@ -16,6 +16,7 @@
 
 #pragma once
 
+<<<<<<< HEAD
 #ifndef __ASSEMBLER__
 #    include "pin_defs.h"
 #endif
@@ -27,3 +28,6 @@
 #define BOTHWAYS 4  /* Duplex-Matrix */
 
 #include "song_list.h"
+=======
+#pragma message("'config_common.h' should no longer be included!")
+>>>>>>> 420e35f9225d7f76e70d25e143311602145c1eb0
