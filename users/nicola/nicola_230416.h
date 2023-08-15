@@ -90,3 +90,4 @@ typedef enum nicola_keycodes {
 
 #define NG_SAFE_RANGE (NG_BOTTOM+1)
 
+

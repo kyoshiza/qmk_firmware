@@ -69,7 +69,7 @@ bool process_jtu(uint16_t keycode, keyrecord_t *record) {
   static bool rshift = false;
 
   switch (keycode) {
-    case KC_LSFT:
+    case KC_LSHIFT:
       if (record->event.pressed) {
         CLOSE_REG_SHIFT();
         lshift = true;
@@ -78,7 +78,7 @@ bool process_jtu(uint16_t keycode, keyrecord_t *record) {
         lshift = false;
       }
       break;
-    case KC_RSFT:
+    case KC_RSHIFT:
       if (record->event.pressed) {
         CLOSE_REG_SHIFT();
         rshift = true;
