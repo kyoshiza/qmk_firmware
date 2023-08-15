@@ -46,8 +46,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   KC_6,    KC_7,   KC_8,    KC_9,    KC_0,    KC_MINS,  KC_EQL,  KC_BSPC, \
       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_LBRC,  KC_RBRC, KC_BSLS, \
       KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,  KC_ENT,           \
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,                    \
-      MO(_FUNC),   KC_LGUI, KC_LALT,                      KC_SPC,  KC_SPC,                   KC_RALT, KC_RGUI, LT(_FUNC, KC_APP), KC_RCTL ),
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_LCTL,  KC_UP,   KC_RSFT, \
+      MO(_FUNC),   KC_LGUI, KC_LALT,                      KC_SPC,  KC_SPC,          KC_RALT, MO(_FUNC), KC_LEFT,  KC_DOWN, KC_RIGHT),
 
 // NICOLA親指シフト
   // デフォルトレイヤーに関係なくQWERTYで
@@ -55,16 +55,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC,  NG_1,    NG_2,    NG_3,    NG_4,   NG_5,     NG_6,    NG_7,   NG_8,    NG_9,    NG_0,    NG_MINS,  NG_EQL,  KC_BSPC, \
       KC_TAB,  NG_Q,    NG_W,    NG_E,    NG_R,   NG_T,     NG_Y,    NG_U,   NG_I,    NG_O,    NG_P,    NG_LBRC,  NG_RBRC, NG_BSLS, \
       KC_LCTL, NG_A,    NG_S,    NG_D,    NG_F,   NG_G,     NG_H,    NG_J,   NG_K,    NG_L,    NG_SCLN, NG_QUOT,  KC_ENT,           \
-      KC_LSFT, NG_Z,    NG_X,    NG_C,    NG_V,   NG_B,     NG_N,    NG_M,   NG_COMM, NG_DOT,  NG_SLSH, KC_RSFT,                    \
-      MO(_FUNC), KC_LGUI, KC_LALT,                         NG_SHFTL, NG_SHFTR,                 KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS  ),
+      KC_LSFT, NG_Z,    NG_X,    NG_C,    NG_V,   NG_B,     NG_N,    NG_M,   NG_COMM, NG_DOT,  NG_SLSH, KC_LCTL,  KC_UP,   KC_RSFT, \
+      MO(_FUNC), KC_LGUI, KC_LALT,                         NG_SHFTL, NG_SHFTR,        KC_TRNS,MO(_FUNC), KC_TRNS,  KC_TRNS, KC_TRNS ),
 
   // Function Layer
   [_FUNC] = LAYOUT_62_ansi_2space( \
-      KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_F5,   KC_F6,    KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,  KC_DEL, \
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_HOME,  KC_PGDN, KC_PGUP, KC_END,   KC_PSCR, KC_TRNS, KC_BRK,  KC_TRNS,\
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_LEFT,  KC_DOWN, KC_UP,   KC_RIGHT, KC_INS,  KC_DEL,  KC_ENT,          \
-      KC_LSFT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,                  \
-      MO(_FUNC), KC_TRNS, KC_TRNS,                         KC_EISU,  KC_KANA2,                   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS )
+      KC_GRV,  KC_F1,    KC_F2,     KC_F3,   KC_F4,    KC_F5,   KC_F6,    KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,  KC_DEL, \
+      KC_TRNS, KC_TRNS,   RGB_M_TW,  KC_TRNS, RGB_M_R,  RGB_TOG, KC_HOME,  KC_PGDN, KC_PGUP, KC_END,   KC_PSCR, KC_TRNS, KC_BRK,  KC_TRNS,\
+      KC_TRNS, RGB_M_T,    RGB_M_SW,  KC_TRNS, RGB_M_P,  RGB_M_G, KC_LEFT,  KC_DOWN, KC_UP,   KC_RIGHT, KC_INS,  KC_DEL,  KC_ENT,          \
+      KC_LSFT, LCTL(LALT(KC_DEL)),RGB_M_X,KC_TRNS,KC_TRNS,RGB_M_B, RGB_M_SN, RGB_M_K, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_PGUP, KC_TRNS,\
+      MO(_FUNC), KC_TRNS, KC_TRNS,                         KC_EISU,  KC_KANA2,         KC_TRNS,MO(_FUNC), KC_HOME, KC_PGDN, KC_END )
 };
 
 void matrix_init_user(void) {
@@ -76,9 +76,9 @@ void matrix_init_user(void) {
 // Initialize the 13th LED
 void keyboard_post_init_user(void) {
     for(int i=0; i<RGBLED_NUM; ++i) {
-        rgblight_setrgb_at(0, 0, 0, i);
+          rgblight_setrgb_at(128, 0, 0, i);	// RED
     }
-    rgblight_sethsv_at(170,255,40, RGBLED_NUM-1); // the last LED = BLUE (NICOLA off)
+//     rgblight_sethsv_at(170,255,40, RGBLED_NUM-1); // the last LED = BLUE (NICOLA off)
     nicola_off();
 }
 
@@ -88,22 +88,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_EISU:
       if (record->event.pressed) {
         // NICOLA親指シフト
-        send_string(SS_TAP(X_MHEN)); // Win
-        send_string(SS_TAP(X_LANG2)); // Mac
+        send_string(SS_TAP(X_MHEN));		// Win
+        send_string(SS_TAP(X_LANG2));		// Mac
+//        send_string(SS_LALT(SS_TAP(KC_LSHIFT())));	// ANSI⇔JIS
         nicola_off();
         // NICOLA親指シフト
-        rgblight_sethsv_at(170,255,40, RGBLED_NUM-1); // the last LED = BLUE (NICOLA off)
+//        RGBLIGHT_MODE_RAINBOW_SWIRL(0);
+//        rgblight_sethsv_at(170,255,40, RGBLED_NUM-1); // the last LED = BLUE (NICOLA off)
+        for(int i=0; i<RGBLED_NUM; ++i) {
+            rgblight_setrgb_at(0, 0, 128, i);  // BLUE
+        }
       }
       return false;
       break;
     case KC_KANA2:
       if (record->event.pressed) {
         // NICOLA親指シフト
-        send_string(SS_TAP(X_HENK)); // Win
-        send_string(SS_TAP(X_LANG1)); // Mac
+//        send_string(SS_LALT(SS_TAP(KC_LSHIFT())));	// ANSI⇔JIS
+        send_string(SS_TAP(X_HENK));		// Win
+        send_string(SS_TAP(X_LANG1));		// Mac
         nicola_on();
         // NICOLA親指シフト
-        rgblight_sethsv_at(85,255,40, RGBLED_NUM-1); // the last LED = GREEN (NICOLA on)
+//        RGBLIGHT_MODE_RAINBOW_MOOD(0);
+//        rgblight_sethsv_at(85,255,40, RGBLED_NUM-1); // the last LED = GREEN (NICOLA on)
+        for(int i=0; i<RGBLED_NUM; ++i) {
+            rgblight_setrgb_at(0, 126, 0, i);	// GREEN
+        }
       }
       return false;
       break;
