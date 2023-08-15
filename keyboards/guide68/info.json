@@ -10,7 +10,7 @@
         "extrakey": true,
         "mousekey": true,
         "rgblight": true,
-        "nkro": false
+        "nkro": true
     },
     "processor": "atmega32u4",
     "url": "",
