@@ -2,6 +2,7 @@
 
 キーボード側で親指シフト出力するためのキーマップです。  
 物理的なキー配置はANSI配列ですが、JISキーボードのキーコードを送信します。
+ikebe様のオリジナルレイアウトに矢印キーを追加しました。
 
 ## 配列
 ![Layout](https://github.com/sadaoikebe/qmk_firmware/blob/master/users/nicola/layout.png "Layout")
