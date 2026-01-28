@@ -22,10 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 10
 #define MATRIX_COLS 8
 
-// wiring of each half
-// #define DIODE_DIRECTION COL2ROW
-// #define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B5 }
-// #define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
 
 
 /* Set 0 if debouncing isn't needed */
@@ -39,28 +35,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-/* ws2812 RGB LED */
-// #define RGB_DI_PIN D3
-
 #define RGBLIGHT_LAYERS /* enable RGBLIGHT function */
-#undef RGBLED_NUM
-/*  #ifndef RGBLED_NUM  */
-//  #define RGBLED_NUM 12
-//  #define RGBLIGHT_SPLIT
-//  #define RGBLED_SPLIT { 6, 6 }
-  #define RGBLIGHT_MAX_LAYERS 3 /* maximum up to 32 */
-/*  #endif  */
+#define RGBLIGHT_MAX_LAYERS 3 /* maximum up to 32 */
 
-#define RGBLIGHT_EFFECT_BREATHING
-#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-#define RGBLIGHT_EFFECT_SNAKE
-#define RGBLIGHT_EFFECT_KNIGHT
-#define RGBLIGHT_EFFECT_CHRISTMAS
-#define RGBLIGHT_EFFECT_STATIC_GRADIENT
-#define RGBLIGHT_EFFECT_RGB_TEST
-#define RGBLIGHT_EFFECT_ALTERNATING
-#undef  RGBLIGHT_EFFECT_TWINKLE
 
 /* 
 #define LED_LAYOUT( \

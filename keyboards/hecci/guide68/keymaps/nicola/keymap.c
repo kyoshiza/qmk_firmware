@@ -90,12 +90,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Function Layer
   [_FUNC] = LAYOUT( \
    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_ESC,KC_DEL,\
-   XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_TRNS, KC_TRNS,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PSCR, KC_TRNS, KC_BRK, KC_TRNS,     \
-   XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_TRNS, KC_TRNS,         KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_INS,  KC_DEL,  KC_ENT,             \
-/*   RGB_TOG,  RGB_HUI, RGB_SAI, RGB_VAI, KC_TRNS, KC_TRNS,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PSCR, KC_TRNS, KC_BRK, KC_TRNS,     \
- *   RGB_MOD,   RGB_HUD, RGB_SAD, RGB_VAD, KC_TRNS, KC_TRNS,         KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_INS,  KC_DEL,  KC_ENT,             \
- */ 
-   KC_TRNS,LCTL(LALT(KC_DEL)),KC_TRNS,KC_TRNS,KC_TRNS,QK_BOOT,     QK_BOOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP,KC_TRNS,   \
+   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PSCR, KC_TRNS, KC_BRK, KC_TRNS,     \
+   KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_INS,  KC_DEL,  KC_ENT,             \
+   KC_TRNS,LCTL(LALT(KC_DEL)),KC_TRNS,KC_TRNS,KC_TRNS,QK_BOOT,      QK_BOOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP,KC_TRNS,   \
    MO(_FUNC),   KC_TRNS,  KC_TRNS,         KC_SPC,  KC_EISU,        KC_KANA2, KC_SPC,         KC_TRNS,MO(_FUNC), KC_HOME,KC_PGDN, KC_END)
 };
 
@@ -109,13 +106,14 @@ void matrix_init_user(void) {
 // 開始LEDインデックス, 連続する個数, 光らせる色(ここではプリセットを使用)
 #ifdef RGBLIGHT_LAYERS
   const rgblight_segment_t PROGMEM rgb_layer_1st[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, HSV_BLUE}
+    {0, 12, HSV_WHITE}
   );
   const rgblight_segment_t PROGMEM rgb_layer_2nd[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, HSV_GREEN}
+    {0, 12, HSV_SPRINGGREEN}
   );
   const rgblight_segment_t PROGMEM rgb_layer_3rd[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, HSV_RED}
+//  222=ROSE
+    {0, 12, HSV_MAGENTA}
   );
   const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_layer_1st,
@@ -128,9 +126,9 @@ void matrix_init_user(void) {
   }
   
   layer_state_t layer_state_set_user(layer_state_t state) {
-//    rgblight_set_layer_state(0, layer_state_cmp(state, _QWERTY));
+    rgblight_set_layer_state(0, layer_state_cmp(state, _QWERTY));
     rgblight_set_layer_state(1, layer_state_cmp(state, _NICOLA));
-//    rgblight_set_layer_state(2, layer_state_cmp(state, _FUNC));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _FUNC));
 //    nicola_off();
     return state;
   }
